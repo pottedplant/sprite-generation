@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.8
+version = '1.0'
+group = 'com.github.pottedplant'
+
+jar {
+	from sourceSets.main.allSource
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+}
