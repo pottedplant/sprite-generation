@@ -6,13 +6,15 @@ sourceCompatibility = 1.8
 version = '1.0'
 group = 'com.github.pottedplant'
 
-jar {
-	from sourceSets.main.allSource
-}
-
 repositories {
 	mavenCentral()
 }
 
-dependencies {
+task sourceJar(type: Jar, dependsOn: classes) {
+	classifier = 'sources'
+	from sourceSets.main.allSource
+}
+
+artifacts {
+	archives sourceJar
 }
